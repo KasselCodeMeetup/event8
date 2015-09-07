@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Spring Boot with AWS and Boxfuse</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Spring Boot with AWS and Boxfuse</h1>
+					<br>
+					<h3>Kassel Code Meetup No 8</h3>
+					<p>Waldemar Schneider</p>
+					<p>FLAVIA IT-Management GmbH</p>
+				</section>
+
+				<section>
+					<h1>Agenda</h1>
+
+					<ol>
+						<li>Amazon Web Services</li>
+						<li>Spring Cloud</li>
+                        <li>Boxfuse</li>
+					</ol>
+				</section>
+
+				<section>
+					
+					<section>
+						<h2>Amazon Web Services</h2>
+
+                        <p class="fragment fade-in">created by "accident"</p>
+					</section>
+
+                    <section>
+                        <h2>Components</h2>
+
+                        <ul>
+                            <li class="fragment fade-in">S3</li>
+                            <li class="fragment fade-in">EC2</li>
+                            <li class="fragment fade-in">RDS</li>
+                            <li class="fragment fade-in">Route 53</li>
+                            <li class="fragment fade-in">Identity Management</li>
+                            <li class="fragment fade-in">and much more</li>
+                        </ul>
+                    </section>
+				</section>
+
+				<section>
+					<section>
+						<h2>Spring Cloud</h2>
+
+                        <p class="fragment fade-in">coordination of distributed system leads to boiler plate</p>
+                        <p class="fragment fade-in">provides tools for distributed systems</p>
+                        <p class="fragment fade-in">based on some netflix components</p>
+                        <p class="fragment fade-in">based on spring boot of course :-)</p>
+
+					</section>
+
+					<section>
+                        <h2>Components</h2>
+
+                        <ul>
+                            <li class="fragment fade-in">Eureka</li>
+                            <li class="fragment fade-in">Ribbon</li>
+                            <li class="fragment fade-in">Feign</li>
+                            <li class="fragment fade-in">Archaius</li>
+                            <li class="fragment fade-in">Zuul</li>
+                            <li class="fragment fade-in">Hysterix</li>
+                            <li class="fragment fade-in">Turbine</li>
+                        </ul>
+
+					</section>
+
+				</section>
+
+                <section>
+                    <section>
+                        <h2>Boxfuse</h2>
+
+                        <p class="fragment fade-in">runnable machines everywhere</p>
+                    </section>
+
+                    <section>
+                        <h2>typical server setup</h2>
+                        <img src="pictures/stack.png" class="fragment fade-in"/>
+                    </section>
+
+                    <section>
+                        <h2>and per environment?</h2>
+                        <img src="pictures/environments.png" class="fragment fade-in"/>
+                    </section>
+
+                    <section>
+                        <img src="pictures/shit.jpg">
+                    </section>
+
+                    <section>
+                        <img src="pictures/If-I-had-asked-people-what.jpg">
+                    </section>
+
+                    <section>
+                        <h2>ideas against...</h2>
+
+                        <p class="fragment fade-in">create instance one time</p>
+                        <p class="fragment fade-in">make it immutable</p>
+                        <img class="fragment fade-in" src="pictures/image.png">
+                    </section>
+
+                    <section>
+                        <img src="pictures/bootableapp.png">
+                    </section>
+
+                    <section>
+                        <h2>promote to every environment</h2>
+                        <img src="pictures/promote.png">
+                    </section>
+
+                </section>
+
+				<section>
+					<h2>References and interesting things</h2>
+					<p>
+						<ul>
+							<li>spring cloud: http://projects.spring.io/spring-cloud/spring-cloud.html</li>
+							<li>boxfuse: https://boxfuse.com</li>
+							<li>logentries: https://logentries.com/</li>
+							<li>deploy via travis: https://boxfuse.com/blog/dropwizard-aws-travisci.html</li>
+						</ul>
+					</p>
+				</section>
+
+				<section>
+					<img src="pictures/bender-applause.gif"/>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				/*parallaxBackgroundImage: https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg*/
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

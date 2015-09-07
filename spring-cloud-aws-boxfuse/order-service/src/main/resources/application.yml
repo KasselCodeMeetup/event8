@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:postgresql:drinks
+    username: wschneider
+    password:
+    driverClassName: org.postgresql.Driver
+eureka:
+  instance:
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 3
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+---
+spring:
+  profiles: boxfuse
+  datasource:
+    url: jdbc:postgresql://waldemar.cw0zk44us6uq.eu-central-1.rds.amazonaws.com:5432/waldemar
+    username: waldemar
+    password: waldemar

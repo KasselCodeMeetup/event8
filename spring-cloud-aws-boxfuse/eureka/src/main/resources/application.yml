@@ -1,0 +1,23 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka.${spring.application.instance_id:${random.value}}
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    leaseRenewalIntervalInSeconds: 3
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+---
+spring:
+  profiles: boxfuse
+
+eureka:
+  instance:
+    metadata-map:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}

@@ -1,0 +1,11 @@
+html
+  head
+    title listing all orders
+
+  body
+    h1 listing all orders (currently on #{server})
+
+    ol
+      for order in orders
+        li #{order.name} hat #{order.drink} bestellt, bestellnummer:
+          a(href='/#{order.id}') #{order.id}
