@@ -1,0 +1,17 @@
+
+
+
+
+
+[31m                                      _
+[31m                            ____ ___ | |__
+[31m                           |_  // __|| '_ \
+[31m                            / / \__ \| | | |
+[31m                           /___||___/|_| |_|
+
+                               [1mbetter[0m
+                         The [9malternative[0m shell
+
+
+                      Kassel Code Meetup 02.09.2015
+                           Patrick Brückner
