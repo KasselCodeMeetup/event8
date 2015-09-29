@@ -1,0 +1,48 @@
+#compdef update-java-alternatives
+
+__available_jnames() {
+  declare -a all_java_versions
+  all_java_versions=(`update-java-alternatives --list | awk {'print $1'}`)
+  _describe -t containers-running "running containers" all_java_versions
+}
+
+__uja_subcommand() {
+  local -a _command_args
+  case "$words[1]" in
+    (--set)
+      _arguments \
+        ':jnames:__available_jnames'
+    ;;
+
+  esac
+}
+
+local curcontext="$curcontext" state
+typeset -A opt_args
+
+local -a _1st_arguments
+_1st_arguments=(
+  '--set:Set version of java to use as default'
+  '--list:List installed java version on this system'
+)
+
+_arguments -C \
+  '(-v --verbose)'--verbose'[Enable verbose mode]' \
+  '(--jre)'--jre'[Limit action to the jre]' \
+  '(--jre-headless)'--jre-headless'[Limit action to the headless part of the jre]' \
+  '(--plugin)'--plugin'[Limit action to the java browser plugin]' \
+  '(-): :->command' \
+  '(-)*:: :->option-or-argument'
+
+case $state in
+    (command)
+        _arguments \
+          '(-s --set)'--set'[Set the active jre/sdk]' \
+          '(-l --list)'--list'[List all installed packages]' \
+          '(-a --auto)'--auto'[Switch jre/sdk to auto mode]' \
+          '(-? -h --help)'--help'[Display a help message.]'
+        ;;
+    (option-or-argument)
+        __uja_subcommand
+        ;;
+esac

@@ -1,0 +1,97 @@
+
+
+
+
+      _      ___ __     __ _____        ____   _____  __  __   ___
+     | |    |_ _|\ \   / /| ____|      |  _ \ | ____||  \/  | / _ \
+     | |     | |  \ \ / / |  _|        | | | ||  _|  | |\/| || | | |
+     | |___  | |   \ V /  | |___       | |_| || |___ | |  | || |_| |
+     |_____||___|   \_/   |_____|      |____/ |_____||_|  |_| \___/
+
+
+
+
+
+
+
+
+[36m   # zsh has awesome autocompletion: $ cd<TAB>
+
+       cd ~/tmp/modules/mymodules/src
+
+
+
+
+
+
+
+[36m   # zsh has cd replacing $ cd <REPLACE> <WITH>
+
+       cd src bin
+       -> equivalent to cd ../bin
+
+       cd mymodule supermodule
+       -> equivalent to ../../supermodule/bin
+
+
+
+[36m   # zsh has extended autocomplete features
+
+        cd /u/lo/b/
+
+        cd /u/l/b/
+
+
+[36m   # zsh shared history across ALL instances
+
+
+
+
+
+[36m    # command history
+
+        docker <TAB>
+
+
+
+
+[36m   # tons of modules e.g. oh-my-zsh
+
+        echo $(plugins)
+        # git example
+        cd ~/Projects/zsh-presentation/
+
+
+
+[36m   # relatively easy to write autocompletion features
+
+        update-java-alternatives <TAB>
+
+        ## common way:
+
+        man update-java-alternatives
+        update-java-alternatives --list
+        update-java-alternatives --set <jname>
+
+        ## easiser
+
+        view _update-java-alternatives
+        # copy it into the right location
+        cp _update-java-alternatives ~/.oh-my-zsh/custom/
+        # reload zsh config
+        source ~/.zshrc
+
+
+
+
+
+
+[36m   # global aliases
+
+        alias -g ignore='>/dev/null'
+        dmesg ignore
+        --> expands to dmesg >/dev/null
+
+
+
+

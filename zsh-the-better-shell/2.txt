@@ -1,0 +1,17 @@
+[33m                _   _  _       _
+[33m               | | | |(_) ___ | |_  ___   _ __  _   _
+[33m               | |_| || |/ __|| __|/ _ \ | '__|| | | |
+[33m               |  _  || |\__ \| |_| (_) || |   | |_| |
+[33m               |_| |_||_||___/ \__|\___/ |_|    \__, |
+[33m                                                |___/
+
+        * 1977 Bourne Shell `sh`, father of modern shells
+
+        * 1979 C-Shell `csh`, syntax similar to C
+
+        * 1980 Bourne-again-shell `bash`, default
+               shell in modern Linux distributions
+
+        * 1990 Z-Shell `zsh`
+
+
